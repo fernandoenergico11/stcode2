@@ -27,9 +27,7 @@ def mostrar_numeros():
                 elegidos = [code[0] for code in cur.fetchall()]
 
                 if len(elegidos) == cantidad_aleatorios:
-                    for num_aleatorio in elegidos:
-                        cur.execute("INSERT INTO compra_boletas (code) VALUES (%s)", (num_aleatorio,))
-                        cur.execute("UPDATE grupo SET estado = 0 WHERE code = %s", (num_aleatorio,))
+                    
 
                     miConexion.commit()
  
